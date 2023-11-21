@@ -1,9 +1,27 @@
 
 <div>
+   
 
-    <app-comp1></app-comp1>
-
-    <app-comp2></app-comp2>
-
+    <div style="text-align: center; background-color: skyblue; height: 100%;">
+        <h1 style="color: white;">Router All Exmple</h1>
+        <a routerLink="home">Home</a> |
+        <a routerLink="about">About</a> |
+        <a routerLink="contact">Contact_Us</a> |
+        <a routerLink="student">student</a> |
+        <button (click)="redirect()" style="background-color: red; color:black;">Go To main Page</button>
+        <br><br>
+        <ul>
+            <li *ngFor=" let Data of AllBook  ">
+                id:{{Data.id}} Name:{{Data.name}} 
+                <a [routerLink]="['about',Data.id]"> view Details</a>
+            </li>
+        </ul>
+    </div>
+    <router-outlet></router-outlet>
 </div>
+
+
+
+
+
 
